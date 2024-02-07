@@ -22,7 +22,6 @@ export default function Home() {
       type: "setUsername",
       username: e.target.value,
     };
-
     dispatch(action);
   }
 
@@ -38,7 +37,6 @@ export default function Home() {
   return (
     <div className="text-cyan-600">
       <h1>Update state:</h1>
-
       <input type="text" onChange={handleUserName}></input>
       <button onClick={handleLogIn}>LogIn</button>
       <h1>Profile:</h1>
