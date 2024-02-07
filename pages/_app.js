@@ -1,9 +1,11 @@
 import "@/styles/globals.css";
 import { CountContext } from "./countContex";
+import { useState } from "react";
 
 export default function App({ Component, pageProps }) {
+  const [count, setCount] = useState(1); //update a value
   return (
-    <CountContext.Provider value={1}>
+    <CountContext.Provider value={{ count, setCount }}>
       <Component {...pageProps} />
     </CountContext.Provider>
   );
