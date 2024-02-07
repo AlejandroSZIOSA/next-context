@@ -2,7 +2,6 @@ import { useState, useReducer } from "react";
 
 const initialState = {
   username: "",
-  email: "",
   loggedIn: false,
 };
 
@@ -45,8 +44,6 @@ export default function Home() {
       <h1>Profile:</h1>
       <h2>UserName</h2>
       <p>{state.username}</p>
-      <h2>Email</h2>
-      <p>{state.email}</p>
       <h2>Logged in?</h2>
       {state.loggedIn ? <p>Yes</p> : <p>No</p>}
     </div>
