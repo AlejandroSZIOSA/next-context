@@ -36,10 +36,11 @@ export default function Home() {
 
   return (
     <div className="text-cyan-600">
-      <h1>Update state:</h1>
+      <h1>Reducer</h1>
+      <h2>Update state:</h2>
       <input type="text" onChange={handleUserName}></input>
       <button onClick={handleLogIn}>LogIn</button>
-      <h1>Profile:</h1>
+      <h2>Profile:</h2>
       <h2>UserName</h2>
       <p>{state.username}</p>
       <h2>Logged in?</h2>
