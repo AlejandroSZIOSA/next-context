@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 
 const initialState = {
   username: "",
@@ -6,15 +6,34 @@ const initialState = {
   loggedIn: false,
 };
 
+function reducer(state, action) {
+  if (action.type == "setUsername") {
+    return { ...state, username: action.username };
+  } else if (action.type == "setLogIn") {
+    return { ...state, loggedIn: action.loggedIn };
+  }
+}
+
 export default function Home() {
-  const [state, setState] = useState(initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   function handleUserName(e) {
-    setState({ ...state, username: e.target.value });
+    /* setState({ ...state, username: e.target.value }); */
+    const action = {
+      type: "setUsername",
+      username: e.target.value,
+    };
+
+    dispatch(action);
   }
 
   function handleLogIn() {
-    setState({ ...state, loggedIn: true });
+    /* setState({ ...state, loggedIn: true }); */
+    const action = {
+      type: "setLogIn",
+      loggedIn: true,
+    };
+    dispatch(action);
   }
 
   return (
