@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-import { CountContext } from "./countContex";
+import CountChild from "./countChild";
 
 export default function count() {
-  const count = useContext(CountContext);
+  /* const count = useContext(CountContext); */
 
   return (
-    <>
-      <h1>Context (without Child)</h1>
-      <div>{count}</div>
-    </>
+    <div>
+      <h1>Parent Component</h1>
+      <CountChild />
+    </div>
   );
 }
